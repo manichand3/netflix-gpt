@@ -1,0 +1,24 @@
+/* header.css */
+body {
+  margin: 0; /* Ensure no margin around the body */
+}
+
+.header {
+  position: fixed; /* Fix the header at the top */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+.bg-gray-900 {
+  background-color: #1f2937; /* Tailwind's gray-900 color */
+  padding: 10px 20px; /* Add some padding */
+}
+
+.netflix-logo {
+  display: block; /* Make the image a block element */
+  margin: 0; /* Reset margins */
+  height: 40px; /* Set a height for the logo */
+  /* Optionally set a max-width for responsiveness */
+}

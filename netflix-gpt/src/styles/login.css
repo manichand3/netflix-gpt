@@ -1,0 +1,62 @@
+/* login.css */
+
+body {
+  margin: 0; /* Remove default body margin */
+}
+
+.background-container {
+  position: relative; /* Establish a positioning context */
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Hide overflow if the image is larger than the container */
+}
+
+.background {
+  position: fixed; /* Fix the image in place */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  object-fit: cover; /* Ensure the image covers the container */
+  z-index: -1; /* Send the image behind other elements */
+}
+
+.form-container {
+  position: absolute; /* Position form in relation to the container */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust to perfectly center */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Semi-transparent background for the form */
+  padding: 20px; /* Add padding around the form */
+  border-radius: 8px; /* Round the corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+  color: white; /* Text color */
+}
+
+input {
+  display: block; /* Make inputs block elements */
+  width: 100%; /* Full width */
+  padding: 10px; /* Padding for inputs */
+  margin-bottom: 15px; /* Space between inputs */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+}
+
+button {
+  width: 100%; /* Full width button */
+  padding: 10px; /* Button padding */
+  background-color: #e50914; /* Netflix red color */
+  color: white; /* Button text color */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+button:hover {
+  background-color: #f40612; /* Darker red on hover */
+}
