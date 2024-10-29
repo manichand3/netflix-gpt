@@ -60,3 +60,6 @@ button {
 button:hover {
   background-color: #f40612; /* Darker red on hover */
 }
+.toggle-text {
+  cursor: pointer;
+}

@@ -1,11 +1,26 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Header from "./header";
 import "../styles/login.css"; // Ensure to import your CSS file
+import { validationCheck } from "../utils/validationCheck";
 
 const Login = () => {
-  const [isSignUp, setIsSignUp] = useState(true); // Updated state name for clarity
+  const [isSignUp, setIsSignUp] = useState(true);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const email = useRef(null);
+  const password = useRef(null);
+
   const toggle = () => {
     setIsSignUp(!isSignUp);
+    setErrorMessage(null); // Clear error message on toggle
+  };
+
+  const handleValidation = (event) => {
+    event.preventDefault(); // Prevent default form submission
+    const emailValue = email.current.value;
+    const passwordValue = password.current.value;
+
+    const valid = validationCheck(emailValue, passwordValue);
+    setErrorMessage(valid);
   };
 
   return (
@@ -29,18 +44,23 @@ const Login = () => {
               />
             )}
             <input
+              ref={email}
               type="email"
               placeholder="Email"
               aria-label="Email"
               required
             />
             <input
+              ref={password}
               type="password"
               placeholder="Password"
               aria-label="Password"
               required
             />
-            <button type="submit">{isSignUp ? "Sign-up" : "Sign-in"}</button>
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
+            <button onClick={handleValidation} type="submit">
+              {isSignUp ? "Sign-up" : "Sign-in"}
+            </button>
           </form>
           <p onClick={toggle} className="toggle-text">
             {isSignUp ? "Already a user? Sign-in" : "New user? Sign-up"}
